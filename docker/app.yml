@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  chatpdf-app:
+    container_name: test-app
+    build:
+      context: ../
+      dockerfile: Dockerfile
+      args:
+        PORT: ${PORT}
+    restart: always
+    ports:
+      - 3005:3000
+    image: test-nextjs-docker:beta
